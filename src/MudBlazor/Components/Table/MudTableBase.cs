@@ -479,11 +479,11 @@ namespace MudBlazor
         /// The size of the inline edit button.
         /// </summary>
         /// <remarks>
-        /// Defaults to <see cref="Size.Medium"/>.
+        /// Defaults to <see cref="Size.Small"/>.
         /// </remarks>
         [Parameter]
         [Category(CategoryTypes.Table.Editing)]
-        public Size InlineEditButtonSize { get; set; } = Size.Medium;
+        public Size InlineEditButtonSize { get; set; } = Size.Small;
 
         /// <summary>
         /// Shows the cancel button during inline editing.
