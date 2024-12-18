@@ -20,32 +20,32 @@
             }
             else if (ReferenceEquals(Context?.Table._editingItem, Item) && (!Context?.Table.ReadOnly ?? false) && Context?.Table.ApplyButtonPosition.DisplayApplyButtonAtStart() == true)
             {
-        <div style="display: flex;">
-            @if (Context?.Table.CommitButtonContext != null)
-            {
-                @Context?.Table.CommitButtonContext;
-            }
-            else
-            {
-                <MudTooltip Text="@Context?.Table?.CommitEditTooltip">
-                    <MudIconButton Class="pa-0" Icon="@Context?.Table?.CommitEditIcon" OnClick="FinishEdit" Size="@Size.Small" Disabled="@(!(Context?.Table?.Validator?.IsValid ?? false))" />
-                </MudTooltip>
-            }
+                <div style="display: flex;">
+                    @if (Context?.Table.CommitButtonContext != null)
+                    {
+                        @Context?.Table.CommitButtonContext;
+                    }
+                    else
+                    {
+                        <MudTooltip Text="@Context?.Table?.CommitEditTooltip">
+                            <MudIconButton Class="pa-0" Icon="@Context?.Table?.CommitEditIcon" OnClick="FinishEdit" Size="@Size.Small" Disabled="@(!(Context?.Table?.Validator?.IsValid ?? false))" />
+                        </MudTooltip>
+                    }
 
-            @if (Context?.Table?.CanCancelEdit ?? false)
-            {
-                @if (Context?.Table.CancelButtonContext != null)
-                {
-                    @Context?.Table.CancelButtonContext;
-                }
-                else
-                {
-                    <MudTooltip Text="@Context?.Table?.CancelEditTooltip">
-                        <MudIconButton Class="pa-0 ml-4" Icon="@Context?.Table?.CancelEditIcon" OnClick="CancelEdit" Size="@Size.Small" />
-                    </MudTooltip>
-                }
-            }
-        </div>
+                    @if (Context?.Table?.CanCancelEdit ?? false)
+                    {
+                        @if (Context?.Table.CancelButtonContext != null)
+                        {
+                            @Context?.Table.CancelButtonContext;
+                        }
+                        else
+                        {
+                            <MudTooltip Text="@Context?.Table?.CancelEditTooltip">
+                                <MudIconButton Class="pa-0 ml-4" Icon="@Context?.Table?.CancelEditIcon" OnClick="CancelEdit" Size="@Size.Small" />
+                            </MudTooltip>
+                        }
+                    }
+                </div>
             }
         </MudTd>
     }
