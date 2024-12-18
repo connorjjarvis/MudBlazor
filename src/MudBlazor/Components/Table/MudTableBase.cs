@@ -481,7 +481,7 @@ namespace MudBlazor
         /// </remarks>
         [Parameter]
         [Category(CategoryTypes.Table.Editing)]
-        public Size? InlineEditButtonSize { get; set; } = Size.Small;
+        public Size InlineEditButtonSize { get; set; } = Size.Small;
 
         /// <summary>
         /// Shows the cancel button during inline editing.
