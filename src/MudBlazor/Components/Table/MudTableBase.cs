@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using MudBlazor.Utilities;
 
@@ -476,6 +474,16 @@ namespace MudBlazor
         public string CancelEditIcon { get; set; } = Icons.Material.Filled.Cancel;
 
         /// <summary>
+        /// The size of the inline edit button.
+        /// </summary>
+        /// <remarks>
+        /// Defaults to <see cref="Size.Medium"/>.
+        /// </remarks>
+        [Parameter]
+        [Category(CategoryTypes.Table.Editing)]
+        public Size InlineEditButtonSize { get; set; } = Size.Medium;
+
+        /// <summary>
         /// Shows the cancel button during inline editing.
         /// </summary>
         /// <remarks>
@@ -524,6 +532,27 @@ namespace MudBlazor
         [Parameter]
         [Category(CategoryTypes.Table.Editing)]
         public RenderFragment<EditButtonContext>? EditButtonContent { get; set; }
+
+        /// <summary>
+        /// The content of the Commit button which commits the inline edit.
+        /// </summary>
+        /// <remarks>
+        /// Requires <see cref="Editable"/> to be <c>true</c> and <see cref="ReadOnly"/> to be <c>false</c>.
+        /// </remarks>
+        [Parameter]
+        [Category(CategoryTypes.Table.Editing)]
+        public RenderFragment? CommitButtonContext { get; set; }
+
+
+        /// <summary>
+        /// The content of the Cancel button which cancels the inline edit.
+        /// </summary>
+        /// <remarks>
+        /// Requires <see cref="Editable"/> to be <c>true</c> and <see cref="ReadOnly"/> to be <c>false</c>.
+        /// </remarks>
+        [Parameter]
+        [Category(CategoryTypes.Table.Editing)]
+        public RenderFragment? CancelButtonContext { get; set; }
 
         /// <summary>
         /// Occurs before inline editing begins for a row.
