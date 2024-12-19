@@ -15,7 +15,7 @@
                 }
                 else
                 {
-                    <MudIconButton Size="@Context?.Table?.InlineEditButtonSize" Icon="@Icons.Material.Outlined.Edit" Class="pa-0" OnClick="StartEditingItem" Disabled="Context?.EditButtonDisabled(Item) ?? false" />
+                    <MudIconButton Size="Size.Small" Icon="@Icons.Material.Outlined.Edit" Class="pa-0" OnClick="StartEditingItem" Disabled="Context?.EditButtonDisabled(Item) ?? false" />
                 }
             }
             else if (ReferenceEquals(Context?.Table._editingItem, Item) && (!Context?.Table.ReadOnly ?? false) && Context?.Table.ApplyButtonPosition.DisplayApplyButtonAtStart() == true)
@@ -28,7 +28,7 @@
                     else
                     {
                         <MudTooltip Text="@Context?.Table?.CommitEditTooltip">
-                            <MudIconButton Class="pa-0" Icon="@Context?.Table?.CommitEditIcon" OnClick="FinishEdit" Size="@Context?.Table?.InlineEditButtonSize" Disabled="@(!(Context?.Table?.Validator?.IsValid ?? false))" />
+                            <MudIconButton Class="pa-0" Icon="@Context?.Table?.CommitEditIcon" OnClick="FinishEdit" Size="Size.Small" Disabled="@(!(Context?.Table?.Validator?.IsValid ?? false))" />
                         </MudTooltip>
                     }
 
@@ -41,7 +41,7 @@
                         else
                         {
                             <MudTooltip Text="@Context?.Table?.CancelEditTooltip">
-                                <MudIconButton Class="pa-0 ml-4" Icon="@Context?.Table?.CancelEditIcon" OnClick="CancelEdit" Size="@Context?.Table?.InlineEditButtonSize" />
+                                <MudIconButton Class="pa-0 ml-4" Icon="@Context?.Table?.CancelEditIcon" OnClick="CancelEdit" Size="Size.Small" />
                             </MudTooltip>
                         }
                     }
@@ -73,19 +73,19 @@
                 }
                 else
                 {
-                    <MudIconButton Size="@Context?.Table?.InlineEditButtonSize" Icon="@Icons.Material.Outlined.Edit" Class="pa-0" OnClick="StartEditingItem" Disabled="Context?.EditButtonDisabled(Item)?? false" />
+                    <MudIconButton Size="Size.Small" Icon="@Icons.Material.Outlined.Edit" Class="pa-0" OnClick="StartEditingItem" Disabled="Context?.EditButtonDisabled(Item)?? false" />
                 }
             }
             else if (ReferenceEquals(Context?.Table._editingItem, Item) && (!Context?.Table.ReadOnly ?? false) && Context?.Table.ApplyButtonPosition.DisplayApplyButtonAtEnd() == true)
             {
                 <div style="display: flex;">
                     <MudTooltip Text="@Context.Table.CommitEditTooltip">
-                        <MudIconButton Class="pa-0" Icon="@Context.Table.CommitEditIcon" OnClick="FinishEdit" Size="@Context?.Table?.InlineEditButtonSize" Disabled="@(!(Context?.Table.Validator?.IsValid ?? false))" />
+                        <MudIconButton Class="pa-0" Icon="@Context.Table.CommitEditIcon" OnClick="FinishEdit" Size="Size.Small" Disabled="@(!(Context?.Table.Validator?.IsValid ?? false))" />
                     </MudTooltip>
                     @if (Context.Table.CanCancelEdit)
                     {
                         <MudTooltip Text="@Context.Table.CancelEditTooltip">
-                            <MudIconButton Class="pa-0 ml-4" Icon="@Context.Table.CancelEditIcon" OnClick="CancelEdit" Size="@Context?.Table?.InlineEditButtonSize" />
+                            <MudIconButton Class="pa-0 ml-4" Icon="@Context.Table.CancelEditIcon" OnClick="CancelEdit" Size="Size.Small" />
                         </MudTooltip>
                     }
                 </div>
